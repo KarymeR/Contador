@@ -14,7 +14,7 @@ function agregarManzana() {
 
     manzana.addEventListener('click', function(){
         let contenido = document.getElementById("frutas").value;
-        document.getElementById("frutas").value = contenido + " Manzana";
+        document.getElementById("frutas").value = contenido + "Manzana ";
     });
 }
 
@@ -24,7 +24,7 @@ function agregarPera(){
     pera.addEventListener('click', function(){
 
         let contenido = document.getElementById("frutas").value;
-        document.getElementById("frutas").value = contenido + " Pera";
+        document.getElementById("frutas").value = contenido + "Pera ";
     });
 }
 
@@ -35,7 +35,7 @@ function agregarDurazno(){
     durazno.addEventListener('click', function(){
 
         let contenido = document.getElementById("frutas").value;
-        document.getElementById("frutas").value = contenido + " Durazno";
+        document.getElementById("frutas").value = contenido + "Durazno ";
     });
 }
 
@@ -48,7 +48,6 @@ function contarFrutas() {
         // Limpiar espacios
         contenido = contenido.trim();
         frutas = contenido.split(' ');
-        console.log(frutas);
 
         let manzanas = 0;
         let peras = 0;
@@ -70,11 +69,12 @@ function contarFrutas() {
         
         // Crear etiqueta        
         const contenedor = document.getElementById('contenedor');
-        let label = document.createElement('LABEL');
-        label.innerHTML = 'Hay ' + manzanas + ' manzanas, ' + peras + ' peras, ' + duraznos + ' duraznos';
+        let lblFrutas = document.createElement('LABEL');
+        lblFrutas.id = 'lblFrutas'
+        lblFrutas.innerHTML = 'Hay ' + manzanas + ' manzanas, ' + peras + ' peras y ' + duraznos + ' duraznos';
         
         // Mostrar resultado         
-        contenedor.appendChild(label);
+        contenedor.appendChild(lblFrutas);
 
     });
 }
@@ -85,5 +85,8 @@ function limpiar() {
     contar.addEventListener('click', function(){
         const frutas = document.getElementById('frutas');
         document.getElementById("frutas").value = "";
+
+        const lblFrutas = document.getElementById('lblFrutas');
+        contenedor.removeChild(lblFrutas);
     })
 }

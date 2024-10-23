@@ -26,8 +26,10 @@ button {
     justify-content: center;
 }
 
-input {    
+textarea {    
     margin: 1rem 0;
+    height: 8rem;
+    font-family: sans-serif;
 }
 
 .botones {
